@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "rimraf ./build && tsc",
+    "build": "rimraf ./build && tsc && cp ./src/database/db.sqlite ./build",
     "start": "node build/index.js",
     "dev": "ts-node-dev src/index.ts",
     "test": "set NODE_ENV=test jest --runInBand",

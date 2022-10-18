@@ -5,6 +5,8 @@ import { AppDataSource } from './database';
 
 const server = express();
 
+const PORT = process.env.PORT
+
 AppDataSource.initialize()
     .then(() => {
         console.log("Data Source inicializado!")
@@ -20,4 +22,4 @@ server.get('/', (request: Request, response: Response) => {
     return response.status(200).json({ message: 'DioBank API' })
 })
 
-server.listen(5000, () => console.log('Server on'))
+server.listen(PORT, () => console.log('Server on'))

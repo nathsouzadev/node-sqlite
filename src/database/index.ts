@@ -1,15 +1,18 @@
-import { DataSource } from "typeorm"
+import { DataSource, DataSourceOptions } from "typeorm"
 import { User } from "../entities/User"
+require('dotenv').config()
 
 export const AppDataSource = new DataSource({
-    type: "sqlite",
-    database: "../../database/db.sqlite",
+    type: "postgres",
+    url: process.env.URL_DATABASE,
+    // type: "sqlite",
+    // database: "./src/database/db.sqlite",
     entities: [
         User
     ],
     migrations: [
         "./src/database/migrations/*.ts"
-    ],
+    ]
 })  
 
 AppDataSource.initialize()

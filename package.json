@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "rimraf ./build && tsc",
+    "build": "tsc",
     "start": "node build/index.js",
     "dev": "set PORT=5000 && ts-node-dev src/index.ts",
     "test": "set NODE_ENV=test jest --runInBand",
